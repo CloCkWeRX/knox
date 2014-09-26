@@ -10,6 +10,9 @@ agent = Mechanize.new do |a|
 end
 
 first_page = agent.get url
+
+puts first_page.inspect unless first_page.title
+
 p first_page.title.strip
 first_page_form = first_page.forms.first
 first_page_form.radiobuttons.first.click
